@@ -27,9 +27,10 @@ namespace control_pacientes.Clases
         {
             return this.nombre + " " + this.email;
         }
-        public Tuple<bool, Usuario> logIn()
+        public Tuple<bool, Usuario, string> logIn()
         {
             bool isValid = false;
+            string error = "Database error";
             Usuario us = new Usuario();
             try
             {
@@ -43,13 +44,13 @@ namespace control_pacientes.Clases
                 command.Parameters.Add(idParam);
                 SqlDataReader dataReader = command.ExecuteReader();
                 List<Usuario> users = new List<Usuario>();
-                while (dataReader.Read())
+                int counter = 0;
+                if (dataReader.Read())
                 {
+                    counter ++;
                     Rol rol = new Rol();
                     rol.rolID = int.Parse(dataReader["rolID"].ToString());
                     rol.nombre = dataReader["roleNombre"].ToString();
-
-
                     us.usuarioID = int.Parse(dataReader["usuarioID"].ToString());
                     us.email = dataReader["email"].ToString();
                     us.password = dataReader["password"].ToString();
@@ -63,7 +64,16 @@ namespace control_pacientes.Clases
                     {
                         isValid = true;
                     }
+                    else
+                    {
+                        error = "Contraseña incorrecta";
+                    }
                     users.Add(us);
+                }
+                con.SqlCon.Close();
+                if (counter == 0)
+                {
+                    error = "Usuario no encontrado";
                 }
                 con.SqlCon.Close();
             }
@@ -71,7 +81,7 @@ namespace control_pacientes.Clases
             {
                 MessageBox.Show(e.ToString());
             }
-            return Tuple.Create(isValid, us);
+            return Tuple.Create(isValid, us, error);
         }
 
         static string ComputeSha256Hash(string rawData)
@@ -89,6 +99,81 @@ namespace control_pacientes.Clases
                     builder.Append(bytes[i].ToString("x2"));
                 }
                 return builder.ToString();
+            }
+        }
+
+        public List<Usuario> getUsers()
+        {
+            List<Usuario> users = new List<Usuario>();
+            try
+            {
+                Usuario us = new Usuario();
+                int counter = 0;
+                Conexion con = new Conexion();
+                con.SqlCon.Open();
+                SqlCommand command = new SqlCommand(null, con.SqlCon);
+                command.CommandText = "select u.*, r.nombre as roleNombre  from Usuarios u inner join Roles r on r.rolID = u.rolID";
+                SqlDataReader dataReader = command.ExecuteReader();
+                while (dataReader.Read())
+                {
+                    counter++;
+                    Rol rol = new Rol();
+                    rol.rolID = int.Parse(dataReader["rolID"].ToString());
+                    rol.nombre = dataReader["roleNombre"].ToString();
+                    us.usuarioID = int.Parse(dataReader["usuarioID"].ToString());
+                    us.email = dataReader["email"].ToString();
+                    us.password = dataReader["password"].ToString();
+                    us.nombre = dataReader["nombre"].ToString();
+                    us.dui = dataReader["dui"].ToString();
+                    us.nit = dataReader["nit"].ToString();
+                    us.telefono_1 = dataReader["telefono_2"].ToString();
+                    us.foto = dataReader["foto"].ToString();
+                    us.rol = rol;
+                    users.Add(us);
+                }
+                con.SqlCon.Close();
+            }
+            catch (SqlException e)
+            {
+                MessageBox.Show(e.ToString());
+            }
+            return users;
+        }
+
+        public void fillGrid(DataGridView dgv)
+        {
+            List<Usuario> users = new List<Usuario>();
+            try
+            {
+                Usuario us = new Usuario();
+                int counter = 0;
+                Conexion con = new Conexion();
+                con.SqlCon.Open();
+                SqlCommand command = new SqlCommand(null, con.SqlCon);
+                command.CommandText = "select u.*, r.nombre as roleNombre  from Usuarios u inner join Roles r on r.rolID = u.rolID";
+                SqlDataReader dataReader = command.ExecuteReader();
+                while (dataReader.Read())
+                {
+                    counter++;
+                    Rol rol = new Rol();
+                    rol.rolID = int.Parse(dataReader["rolID"].ToString());
+                    rol.nombre = dataReader["roleNombre"].ToString();
+                    us.usuarioID = int.Parse(dataReader["usuarioID"].ToString());
+                    us.email = dataReader["email"].ToString();
+                    us.password = dataReader["password"].ToString();
+                    us.nombre = dataReader["nombre"].ToString();
+                    us.dui = dataReader["dui"].ToString();
+                    us.nit = dataReader["nit"].ToString();
+                    us.telefono_1 = dataReader["telefono_2"].ToString();
+                    us.foto = dataReader["foto"].ToString();
+                    us.rol = rol;
+                    users.Add(us);
+                }
+                con.SqlCon.Close();
+            }
+            catch (SqlException e)
+            {
+                MessageBox.Show(e.ToString());
             }
         }
     }
