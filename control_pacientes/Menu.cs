@@ -22,11 +22,19 @@ namespace control_pacientes
             this.user = user;
             lblNombre.Text = user.nombre;
             lblRole.Text = user.rol.nombre;
-            WebClient client = new WebClient();
-            byte[] bytes = client.DownloadData(user.foto);
-            MemoryStream ms = new MemoryStream(bytes);
-            Image img = Image.FromStream(ms);
-            pnlFotoUsuario.BackgroundImage = img;
+            try
+            {
+                WebClient client = new WebClient();
+                byte[] bytes = client.DownloadData(user.foto);
+                MemoryStream ms = new MemoryStream(bytes);
+                Image img = Image.FromStream(ms);
+                pnlFotoUsuario.BackgroundImage = img;
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.ToString());
+            }
+            
         }
 
         private void Menu_Load(object sender, EventArgs e)

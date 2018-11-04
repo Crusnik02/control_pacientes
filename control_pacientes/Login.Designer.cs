@@ -151,7 +151,7 @@
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(255, 31);
             this.txtEmail.TabIndex = 0;
-            this.txtEmail.Text = "carlos@gmail.com";
+            this.txtEmail.Text = "carlosrecinos1999@gmail.com";
             this.txtEmail.TextChanged += new System.EventHandler(this.txtEmail_TextChanged);
             this.txtEmail.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtEmail_KeyPress);
             // 

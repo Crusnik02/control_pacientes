@@ -84,7 +84,7 @@ namespace control_pacientes.Clases
             return Tuple.Create(isValid, us, error);
         }
 
-        static string ComputeSha256Hash(string rawData)
+        public string ComputeSha256Hash(string rawData)
         {
             // Create a SHA256   
             using (SHA256 sha256Hash = SHA256.Create())

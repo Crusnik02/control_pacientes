@@ -113,7 +113,7 @@
     <Compile Include="UsersPanel.Designer.cs">
       <DependentUpon>UsersPanel.cs</DependentUpon>
     </Compile>
-    <Compile Include="Utils\GlobalFuntions.cs" />
+    <Compile Include="Utils\GlobalFunctions.cs" />
     <Compile Include="Utils\Queries.cs" />
     <EmbeddedResource Include="Buttons.resx">
       <DependentUpon>Buttons.cs</DependentUpon>

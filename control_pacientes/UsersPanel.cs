@@ -10,6 +10,8 @@ using System.Windows.Forms;
 using control_pacientes.Clases;
 using control_pacientes.Utils;
 using System.Net;
+using System.Data.SqlClient;
+using System.Data;
 using System.IO;
 namespace control_pacientes
 {
@@ -144,7 +146,7 @@ namespace control_pacientes
         {
             try
             {
-                var utils = new Utils.GlobalFuntions();
+                var utils = new Utils.GlobalFunctions();
                 var Queries = new Utils.Queries();
                 utils.fillGrid(dgvUsers, Queries.GET_USERS);
                 dgvUsers.Columns["rolID"].Visible = false;
@@ -184,15 +186,22 @@ namespace control_pacientes
                 rdbAdmin.Checked = dgvUsers.Rows[i].Cells["rolID"].Value.ToString() == "1";
                 rdbDoctor.Checked = dgvUsers.Rows[i].Cells["rolID"].Value.ToString() == "2";
                 rdbAsistente.Checked = dgvUsers.Rows[i].Cells["rolID"].Value.ToString() == "3";
-                
+                userId = int.Parse(dgvUsers.Rows[i].Cells["usuarioID"].Value.ToString());
                 if (!string.IsNullOrEmpty(dgvUsers.Rows[i].Cells["foto"].Value.ToString()))
                 {
-                    selectedFile = dgvUsers.Rows[i].Cells["foto"].Value.ToString();
-                    WebClient client = new WebClient();
-                    byte[] bytes = client.DownloadData(selectedFile);
-                    MemoryStream ms = new MemoryStream(bytes);
-                    Image img = Image.FromStream(ms);
-                    pnlUsuarioFoto.BackgroundImage = img;
+                    try
+                    {
+                        selectedFile = dgvUsers.Rows[i].Cells["foto"].Value.ToString();
+                        WebClient client = new WebClient();
+                        byte[] bytes = client.DownloadData(selectedFile);
+                        MemoryStream ms = new MemoryStream(bytes);
+                        Image img = Image.FromStream(ms);
+                        pnlUsuarioFoto.BackgroundImage = img;
+                    }
+                    catch(WebException e)
+                    {
+                        MessageBox.Show(e.ToString());
+                    }
                 }
             }
         }
@@ -266,6 +275,7 @@ namespace control_pacientes
                 btnAgregar.Enabled = false;
                 btnEditar.Enabled = true;
                 btnEliminar.Enabled = true;
+                btnCancelar.Enabled = true; 
                 setUserToForm();
             }
         }
@@ -312,11 +322,91 @@ namespace control_pacientes
             }
         }
 
+        public int getRol()
+        {
+            if (rdbAdmin.Checked) return 1;
+            if (rdbDoctor.Checked) return 2;
+            if (rdbAsistente.Checked) return 3;
+            return 3;
+            
+        }
+
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            resetBarra();
+            var utils = new Utils.GlobalFunctions();
+            var queries = new Utils.Queries();
+            var user = new Usuario();
+            SqlCommand cmd = new SqlCommand();
+            if (agregando)
+            {
+                cmd = new SqlCommand(queries.ADD_USER);
+            }else if (editando)
+            {
+                var passwordModified = !string.IsNullOrEmpty(txtPassword.Text);
+                cmd = new SqlCommand(passwordModified ? queries.EDIT_USER : queries.EDIT_USER_NO_PASSWORD);
+            }
+
+            var nombre = new SqlParameter("@nombre", SqlDbType.NVarChar, 50);
+            nombre.Value = txtNombre.Text.Trim();
+            cmd.Parameters.Add(nombre);
+
+            var fechaNacimiento = new SqlParameter("@fechaNacimiento", SqlDbType.Date, 50);
+            fechaNacimiento.Value = dtpFechaNacimiento.Value.ToString();
+            cmd.Parameters.Add(fechaNacimiento);
+
+            var dui = new SqlParameter("@dui", SqlDbType.NVarChar, 50);
+            dui.Value = txtDui.Text.Trim();
+            cmd.Parameters.Add(dui);
+
+            var nit = new SqlParameter("@nit", SqlDbType.NVarChar, 50);
+            nit.Value = txtNit.Text.Trim();
+            cmd.Parameters.Add(nit);
+
+            var telefono_1 = new SqlParameter("@telefono_1", SqlDbType.NVarChar, 50);
+            telefono_1.Value = txtTelefono.Text.Trim();
+            cmd.Parameters.Add(telefono_1);
+
+            var telefono_2 = new SqlParameter("@telefono_2", SqlDbType.NVarChar, 50);
+            telefono_2.Value = txtTelefono2.Text.Trim();
+            cmd.Parameters.Add(telefono_2);
+
+            var email = new SqlParameter("@email", SqlDbType.NVarChar, 50);
+            email.Value = txtEmail.Text.Trim();
+            cmd.Parameters.Add(email);
+
+            var foto = new SqlParameter("@foto", SqlDbType.NVarChar, 50);
+            foto.Value = selectedFile;
+            cmd.Parameters.Add(foto);
+
+            var pass = new SqlParameter("@password", SqlDbType.NVarChar, 100);
+            pass.Value = user.ComputeSha256Hash(txtPassword.Text);
+            cmd.Parameters.Add(pass);
+
+            var rolID = new SqlParameter("@rolID", SqlDbType.Int);
+            rolID.Value = getRol();
+            cmd.Parameters.Add(rolID);
+
+            var usuarioID = new SqlParameter("@usuarioID", SqlDbType.Int);
+            usuarioID.Value = userId;
+            cmd.Parameters.Add(usuarioID);
+            MessageBox.Show(cmd.Parameters.ToString());
+            utils.executeCommand(cmd);
+            fillGrid();
+        }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            var utils = new Utils.GlobalFunctions();
+            var queries = new Utils.Queries();
+            SqlCommand cmd = new SqlCommand(queries.DELETE_USER);
+            var usuarioID = new SqlParameter("@usuarioID", SqlDbType.Int);
+            usuarioID.Value = userId;
+            cmd.Parameters.Add(usuarioID);
+            utils.executeCommand(cmd);
+            fillGrid();
             setFormStatus(false);
-            btnAgregar.Enabled = true;
+            cleanInputs();
+            resetBarra();
         }
     }
 }
