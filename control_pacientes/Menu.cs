@@ -22,16 +22,49 @@ namespace control_pacientes
             this.user = user;
             lblNombre.Text = user.nombre;
             lblRole.Text = user.rol.nombre;
-            WebClient client = new WebClient();
-            byte[] bytes = client.DownloadData("https://wowsciencecamp.org/wp-content/uploads/2018/07/dummy-user-img-1-400x400_x_acf_cropped.png");
-            MemoryStream ms = new MemoryStream(bytes);
-            Image img = Image.FromStream(ms);
-            pnlFotoUsuario.BackgroundImage = img;
+            try
+            {
+                WebClient client = new WebClient();
+                byte[] bytes = client.DownloadData(user.foto);
+                MemoryStream ms = new MemoryStream(bytes);
+                Image img = Image.FromStream(ms);
+                pnlFotoUsuario.BackgroundImage = img;
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.ToString());
+            }
+            
         }
 
         private void Menu_Load(object sender, EventArgs e)
         {
             Login log = new Login();
+            lblPageTitle.Text = "Inicio";
+        }
+
+        private void lblPageTitle_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnUsuarios_Click(object sender, EventArgs e)
+        {
+            lblPageTitle.Text = "Usuarios";
+            usersPanel.BringToFront();
+            usersPanel.refreshGrid();
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            lblPageTitle.Text = "Inicio";
+            homePanel.BringToFront();
+            
+        }
+
+        private void homePanel_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

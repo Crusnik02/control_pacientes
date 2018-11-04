@@ -30,10 +30,11 @@ namespace control_pacientes
 
         private void button1_Click(object sender, EventArgs e)
         {
+            lblErrorPassword.Text = "";
             Usuario user = new Usuario();
             user.email = txtEmail.Text.Trim();
             user.password = txtPassword.Text.Trim();
-            Tuple<bool, Usuario> res = user.logIn();
+            Tuple<bool, Usuario, string> res = user.logIn();
             if (res.Item1)
             {
                 user.password = "";
@@ -41,8 +42,11 @@ namespace control_pacientes
                 menu.Show();
                 this.Hide();
             }
-
-
+            else
+            {
+                lblErrorPassword.Text = res.Item3;
+            }
+            
         }
 
         private void txtEmail_TextChanged(object sender, EventArgs e)
