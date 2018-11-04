@@ -37,13 +37,14 @@
             this.button9 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.button8 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
+            this.btnPaciente = new System.Windows.Forms.Button();
             this.btnInicio = new System.Windows.Forms.Button();
             this.lblRole = new System.Windows.Forms.Label();
             this.lblNombre = new System.Windows.Forms.Label();
             this.pnlFotoUsuario = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.lblPageTitle = new System.Windows.Forms.Label();
+            this.paciente1 = new control_pacientes.UserControls.Paciente();
             this.homePanel = new control_pacientes.Home();
             this.usersPanel = new control_pacientes.UsersPanel();
             this.panel1.SuspendLayout();
@@ -81,7 +82,7 @@
             this.panel3.Controls.Add(this.button9);
             this.panel3.Controls.Add(this.button5);
             this.panel3.Controls.Add(this.button8);
-            this.panel3.Controls.Add(this.button6);
+            this.panel3.Controls.Add(this.btnPaciente);
             this.panel3.Controls.Add(this.btnInicio);
             this.panel3.Location = new System.Drawing.Point(0, 208);
             this.panel3.Name = "panel3";
@@ -191,22 +192,23 @@
             this.button8.Text = "button8";
             this.button8.UseVisualStyleBackColor = false;
             // 
-            // button6
+            // btnPaciente
             // 
-            this.button6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(60)))), ((int)(((byte)(117)))));
-            this.button6.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button6.FlatAppearance.BorderSize = 0;
-            this.button6.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(174)))), ((int)(((byte)(96)))));
-            this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button6.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(246)))), ((int)(((byte)(250)))));
-            this.button6.Location = new System.Drawing.Point(0, 56);
-            this.button6.Margin = new System.Windows.Forms.Padding(0);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(200, 56);
-            this.button6.TabIndex = 7;
-            this.button6.Text = "button6";
-            this.button6.UseVisualStyleBackColor = false;
+            this.btnPaciente.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(60)))), ((int)(((byte)(117)))));
+            this.btnPaciente.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnPaciente.FlatAppearance.BorderSize = 0;
+            this.btnPaciente.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(174)))), ((int)(((byte)(96)))));
+            this.btnPaciente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPaciente.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPaciente.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(246)))), ((int)(((byte)(250)))));
+            this.btnPaciente.Location = new System.Drawing.Point(0, 56);
+            this.btnPaciente.Margin = new System.Windows.Forms.Padding(0);
+            this.btnPaciente.Name = "btnPaciente";
+            this.btnPaciente.Size = new System.Drawing.Size(200, 56);
+            this.btnPaciente.TabIndex = 7;
+            this.btnPaciente.Text = "Paciente";
+            this.btnPaciente.UseVisualStyleBackColor = false;
+            this.btnPaciente.Click += new System.EventHandler(this.btnPaciente_Click);
             // 
             // btnInicio
             // 
@@ -282,6 +284,13 @@
             this.lblPageTitle.Text = "Inicio";
             this.lblPageTitle.Click += new System.EventHandler(this.lblPageTitle_Click);
             // 
+            // paciente1
+            // 
+            this.paciente1.Location = new System.Drawing.Point(200, 68);
+            this.paciente1.Name = "paciente1";
+            this.paciente1.Size = new System.Drawing.Size(1170, 586);
+            this.paciente1.TabIndex = 4;
+            // 
             // homePanel
             // 
             this.homePanel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
@@ -312,6 +321,7 @@
             this.Controls.Add(this.usersPanel);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
+            this.Controls.Add(this.paciente1);
             this.Name = "Menu";
             this.Text = "Menu";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
@@ -332,7 +342,7 @@
         private System.Windows.Forms.Button button9;
         private System.Windows.Forms.Button button8;
         private System.Windows.Forms.Button btnInicio;
-        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Button btnPaciente;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Label lblNombre;
         private System.Windows.Forms.Panel pnlFotoUsuario;
@@ -343,6 +353,8 @@
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Label lblPageTitle;
         private UsersPanel usersPanel;
+
         private Home homePanel;
+        private UserControls.Paciente paciente1;
     }
 }

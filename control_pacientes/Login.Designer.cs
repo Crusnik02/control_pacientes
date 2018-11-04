@@ -139,7 +139,7 @@
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.Size = new System.Drawing.Size(255, 31);
             this.txtPassword.TabIndex = 1;
-            this.txtPassword.Text = "recinos";
+            this.txtPassword.Text = "admin";
             this.txtPassword.UseSystemPasswordChar = true;
             this.txtPassword.TextChanged += new System.EventHandler(this.txtPassword_TextChanged);
             this.txtPassword.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtPassword_KeyUp);
@@ -151,7 +151,7 @@
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(255, 31);
             this.txtEmail.TabIndex = 0;
-            this.txtEmail.Text = "carlosrecinos1999@gmail.com";
+            this.txtEmail.Text = "admin@gmail.com";
             this.txtEmail.TextChanged += new System.EventHandler(this.txtEmail_TextChanged);
             this.txtEmail.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtEmail_KeyPress);
             // 

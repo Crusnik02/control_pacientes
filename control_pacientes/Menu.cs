@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using System.Net;
 using System.IO;
 
+
 using control_pacientes.Clases;
 namespace control_pacientes
 {
@@ -65,6 +66,13 @@ namespace control_pacientes
         private void homePanel_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnPaciente_Click(object sender, EventArgs e)
+        {
+            lblPageTitle.Text = "Paciente";
+            paciente1.BringToFront();
+            
         }
     }
 }

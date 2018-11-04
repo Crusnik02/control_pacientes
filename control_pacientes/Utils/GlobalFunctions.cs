@@ -32,7 +32,7 @@ namespace control_pacientes.Utils
             }
         }
 
-        public void executeCommand(SqlCommand command)
+        public bool executeCommand(SqlCommand command)
         {
             try
             {
@@ -41,10 +41,12 @@ namespace control_pacientes.Utils
                 command.Connection = con.SqlCon;
                 command.ExecuteNonQuery();
                 con.SqlCon.Close();
+                return true;
             }
             catch (SqlException e)
             {
                 MessageBox.Show(e.ToString());
+                return false;
             }
         }
         public Tuple<bool, int> executeCommandReturningId(string query)
