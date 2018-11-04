@@ -118,7 +118,71 @@ namespace control_pacientes.UserControls
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
+            if (ValidarFormulario())
+            {
+                var utils = new Utils.GlobalFunctions();
+                var queries = new Utils.Queries();
+                SqlCommand cmd = new SqlCommand();
+                if (Agregando)
+                {
+                    cmd = new SqlCommand(queries.ADD_PACIENTE);
+                }
+                else if (Editando)
+                {
+                    //var passwordModified = !string.IsNullOrEmpty(txtPassword.Text);
+                    //cmd = new SqlCommand(passwordModified ? queries.EDIT_USER : queries.EDIT_USER_NO_PASSWORD);
+                }
 
+                var nombre = new SqlParameter("@nombre", SqlDbType.NVarChar, 50);
+                nombre.Value = txtNombrePaciente.Text.Trim();
+                cmd.Parameters.Add(nombre);
+
+                var fechaNacimiento = new SqlParameter("@fechaNacimiento", SqlDbType.Date, 50);
+                fechaNacimiento.Value = dtpFechaNacimiento.Value.ToString();
+                cmd.Parameters.Add(fechaNacimiento);
+
+                var dui = new SqlParameter("@dui", SqlDbType.NVarChar, 50);
+                dui.Value = txtDuiPaciente.Text.Trim();
+                cmd.Parameters.Add(dui);
+
+                var nit = new SqlParameter("@nit", SqlDbType.NVarChar, 50);
+                nit.Value = txtNitPaciente.Text.Trim();
+                cmd.Parameters.Add(nit);
+
+                var telefono_1 = new SqlParameter("@tel1", SqlDbType.NVarChar, 50);
+                telefono_1.Value = txtTelefono1.Text.Trim();
+                cmd.Parameters.Add(telefono_1);
+
+                var telefono_2 = new SqlParameter("@tel2", SqlDbType.NVarChar, 50);
+                telefono_2.Value = txtTelefono2.Text.Trim();
+                cmd.Parameters.Add(telefono_2);
+
+                var domicilio = new SqlParameter("@domicilio", SqlDbType.NVarChar,100);
+                domicilio.Value = txtDireccionPaciente.Text.Trim();
+                cmd.Parameters.Add(domicilio);
+
+                var pediatria = new SqlParameter("@pediatria", SqlDbType.Bit);
+                if (chkPediatria.Checked)
+                {
+                    pediatria.Value = true;
+                }
+                else
+                {
+                    pediatria.Value = false;
+                }
+                cmd.Parameters.Add(pediatria);
+
+                //MessageBox.Show(cmd.Parameters.ToString());
+                if (utils.executeCommand(cmd))
+                {
+                    CleanValues();
+                    ControlBarra();
+                    fillGrid();
+                    MessageBox.Show("Registro insertado correctamente",
+                        "Validacion", MessageBoxButtons.OK,
+                        MessageBoxIcon.Information);
+                }
+            }
         }
 
         private void btnEliminar_Click(object sender, EventArgs e)
