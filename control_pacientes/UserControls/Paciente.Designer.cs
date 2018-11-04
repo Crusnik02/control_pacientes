@@ -261,6 +261,7 @@
             // 
             // dgvPacientes
             // 
+            this.dgvPacientes.AllowUserToAddRows = false;
             this.dgvPacientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvPacientes.Location = new System.Drawing.Point(7, 261);
             this.dgvPacientes.Name = "dgvPacientes";
