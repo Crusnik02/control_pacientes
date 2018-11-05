@@ -45,8 +45,9 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.lblPageTitle = new System.Windows.Forms.Label();
             this.paciente1 = new control_pacientes.UserControls.Paciente();
-            this.homePanel = new control_pacientes.Home();
+            this.homePanel = new control_pacientes.UserControls.Home();
             this.usersPanel = new control_pacientes.UsersPanel();
+            this.homePanel1 = new control_pacientes.UserControls.HomePanel();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -63,7 +64,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(200, 657);
+            this.panel1.Size = new System.Drawing.Size(200, 695);
             this.panel1.TabIndex = 0;
             // 
             // panel4
@@ -271,7 +272,7 @@
             this.panel2.Location = new System.Drawing.Point(200, 0);
             this.panel2.Margin = new System.Windows.Forms.Padding(0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1162, 72);
+            this.panel2.Size = new System.Drawing.Size(1264, 72);
             this.panel2.TabIndex = 1;
             // 
             // lblPageTitle
@@ -280,7 +281,7 @@
             this.lblPageTitle.AutoSize = true;
             this.lblPageTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPageTitle.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.lblPageTitle.Location = new System.Drawing.Point(1033, 24);
+            this.lblPageTitle.Location = new System.Drawing.Point(1135, 24);
             this.lblPageTitle.Name = "lblPageTitle";
             this.lblPageTitle.Size = new System.Drawing.Size(62, 25);
             this.lblPageTitle.TabIndex = 0;
@@ -300,7 +301,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.homePanel.Location = new System.Drawing.Point(200, 68);
             this.homePanel.Name = "homePanel";
-            this.homePanel.Size = new System.Drawing.Size(1162, 592);
+            this.homePanel.Size = new System.Drawing.Size(1264, 592);
             this.homePanel.TabIndex = 3;
             this.homePanel.Load += new System.EventHandler(this.homePanel_Load);
             // 
@@ -311,15 +312,23 @@
             this.usersPanel.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.usersPanel.Location = new System.Drawing.Point(222, 75);
             this.usersPanel.Name = "usersPanel";
-            this.usersPanel.Size = new System.Drawing.Size(1140, 580);
+            this.usersPanel.Size = new System.Drawing.Size(1242, 580);
             this.usersPanel.TabIndex = 2;
+            // 
+            // homePanel1
+            // 
+            this.homePanel1.Location = new System.Drawing.Point(200, 68);
+            this.homePanel1.Name = "homePanel1";
+            this.homePanel1.Size = new System.Drawing.Size(1352, 648);
+            this.homePanel1.TabIndex = 5;
             // 
             // Menu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(240)))), ((int)(((byte)(241)))));
-            this.ClientSize = new System.Drawing.Size(1362, 657);
+            this.ClientSize = new System.Drawing.Size(1464, 695);
+            this.Controls.Add(this.homePanel1);
             this.Controls.Add(this.homePanel);
             this.Controls.Add(this.usersPanel);
             this.Controls.Add(this.panel2);
@@ -357,7 +366,8 @@
         private System.Windows.Forms.Label lblPageTitle;
         private UsersPanel usersPanel;
 
-        private Home homePanel;
+        private UserControls.Home homePanel;
         private UserControls.Paciente paciente1;
+        private UserControls.HomePanel homePanel1;
     }
 }

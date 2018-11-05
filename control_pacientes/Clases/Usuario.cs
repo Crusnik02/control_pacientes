@@ -176,5 +176,23 @@ namespace control_pacientes.Clases
                 MessageBox.Show(e.ToString());
             }
         }
+
+        public byte[] getImage(int id)
+        {
+            byte[] bytes = { };
+            var con = new Conexion();
+            con.SqlCon.Open();
+            var command = new SqlCommand("select foto from Usuarios where usuarioID=@id", con.SqlCon);
+            var parameter = new SqlParameter("@id", SqlDbType.Int);
+            parameter.Value = id;
+            command.Parameters.Add(parameter);
+            object value = command.ExecuteScalar();
+            if (value != null)
+            {
+                bytes = (byte[])value;
+            }
+            con.SqlCon.Close();
+            return bytes;
+        }
     }
 }

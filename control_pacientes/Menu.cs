@@ -25,8 +25,7 @@ namespace control_pacientes
             lblRole.Text = user.rol.nombre;
             try
             {
-                WebClient client = new WebClient();
-                byte[] bytes = client.DownloadData(user.foto);
+                byte[] bytes = user.getImage(user.usuarioID);
                 MemoryStream ms = new MemoryStream(bytes);
                 Image img = Image.FromStream(ms);
                 pnlFotoUsuario.BackgroundImage = img;
@@ -35,7 +34,7 @@ namespace control_pacientes
             {
                 MessageBox.Show(e.ToString());
             }
-            
+
         }
 
         private void Menu_Load(object sender, EventArgs e)
@@ -53,13 +52,12 @@ namespace control_pacientes
         {
             lblPageTitle.Text = "Usuarios";
             usersPanel.BringToFront();
-            usersPanel.refreshGrid();
         }
 
         private void button7_Click(object sender, EventArgs e)
         {
             lblPageTitle.Text = "Inicio";
-            homePanel.BringToFront();
+            homePanel1.BringToFront();
             
         }
 

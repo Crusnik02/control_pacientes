@@ -49,15 +49,35 @@ namespace control_pacientes.Utils
                 return false;
             }
         }
-        public Tuple<bool, int> executeCommandReturningId(string query)
+
+        public void fillCombo(ComboBox cmb, string sqlString)
+        {
+            try
+            {
+                Usuario us = new Usuario();
+                Conexion con = new Conexion();
+                con.SqlCon.Open();
+                var adapter = new SqlDataAdapter(sqlString, con.SqlCon);
+                var dataTable = new DataTable();
+                adapter.Fill(dataTable);
+                cmb.DataSource = dataTable;
+                con.SqlCon.Close();
+            }
+            catch (SqlException e)
+            {
+                MessageBox.Show(e.ToString());
+            }
+        }
+
+        public Tuple<bool, int> executeCommandReturningId(SqlCommand command)
         {
             int id = 0;
-            bool error = false;
+            bool error = true;
             try
             {
                 var con = new Conexion();
                 con.SqlCon.Open();
-                var command = new SqlCommand(query, con.SqlCon);
+                command.Connection = con.SqlCon;
                 id = (int)command.ExecuteScalar();
                 con.SqlCon.Close();
                 error = false;
