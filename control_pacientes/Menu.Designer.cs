@@ -1,6 +1,4 @@
-﻿using control_pacientes.Catalogos;
-
-namespace control_pacientes
+﻿namespace control_pacientes
 {
     partial class Menu
     {
@@ -30,30 +28,28 @@ namespace control_pacientes
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.btnUsuarios = new System.Windows.Forms.Button();
-            this.catEspecialidad = new System.Windows.Forms.Button();
-            this.catEnfermedad = new System.Windows.Forms.Button();
-            this.catMedicamento = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
+            this.button9 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.button8 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
+            this.btnPaciente = new System.Windows.Forms.Button();
             this.btnInicio = new System.Windows.Forms.Button();
             this.lblRole = new System.Windows.Forms.Label();
             this.lblNombre = new System.Windows.Forms.Label();
             this.pnlFotoUsuario = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.lblPageTitle = new System.Windows.Forms.Label();
+            this.paciente1 = new control_pacientes.UserControls.Paciente();
             this.homePanel = new control_pacientes.Home();
             this.usersPanel = new control_pacientes.UsersPanel();
-            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -81,12 +77,12 @@ namespace control_pacientes
             // 
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(42)))), ((int)(((byte)(86)))));
             this.panel3.Controls.Add(this.btnUsuarios);
-            this.panel3.Controls.Add(this.catEspecialidad);
-            this.panel3.Controls.Add(this.catEnfermedad);
-            this.panel3.Controls.Add(this.catMedicamento);
+            this.panel3.Controls.Add(this.button1);
+            this.panel3.Controls.Add(this.button3);
+            this.panel3.Controls.Add(this.button9);
             this.panel3.Controls.Add(this.button5);
             this.panel3.Controls.Add(this.button8);
-            this.panel3.Controls.Add(this.button6);
+            this.panel3.Controls.Add(this.btnPaciente);
             this.panel3.Controls.Add(this.btnInicio);
             this.panel3.Location = new System.Drawing.Point(0, 208);
             this.panel3.Name = "panel3";
@@ -111,59 +107,56 @@ namespace control_pacientes
             this.btnUsuarios.UseVisualStyleBackColor = false;
             this.btnUsuarios.Click += new System.EventHandler(this.btnUsuarios_Click);
             // 
-            // catEspecialidad
+            // button1
             // 
-            this.catEspecialidad.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(60)))), ((int)(((byte)(117)))));
-            this.catEspecialidad.Dock = System.Windows.Forms.DockStyle.Top;
-            this.catEspecialidad.FlatAppearance.BorderSize = 0;
-            this.catEspecialidad.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(174)))), ((int)(((byte)(96)))));
-            this.catEspecialidad.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.catEspecialidad.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.catEspecialidad.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(246)))), ((int)(((byte)(250)))));
-            this.catEspecialidad.Location = new System.Drawing.Point(0, 336);
-            this.catEspecialidad.Margin = new System.Windows.Forms.Padding(0);
-            this.catEspecialidad.Name = "catEspecialidad";
-            this.catEspecialidad.Size = new System.Drawing.Size(200, 56);
-            this.catEspecialidad.TabIndex = 2;
-            this.catEspecialidad.Text = "Especialidades";
-            this.catEspecialidad.UseVisualStyleBackColor = false;
-            this.catEspecialidad.Click += new System.EventHandler(this.catEspecialidad_Click);
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(60)))), ((int)(((byte)(117)))));
+            this.button1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(174)))), ((int)(((byte)(96)))));
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(246)))), ((int)(((byte)(250)))));
+            this.button1.Location = new System.Drawing.Point(0, 336);
+            this.button1.Margin = new System.Windows.Forms.Padding(0);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(200, 56);
+            this.button1.TabIndex = 2;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = false;
             // 
-            // catEnfermedad
+            // button3
             // 
-            this.catEnfermedad.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(60)))), ((int)(((byte)(117)))));
-            this.catEnfermedad.Dock = System.Windows.Forms.DockStyle.Top;
-            this.catEnfermedad.FlatAppearance.BorderSize = 0;
-            this.catEnfermedad.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(174)))), ((int)(((byte)(96)))));
-            this.catEnfermedad.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.catEnfermedad.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.catEnfermedad.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(246)))), ((int)(((byte)(250)))));
-            this.catEnfermedad.Location = new System.Drawing.Point(0, 280);
-            this.catEnfermedad.Margin = new System.Windows.Forms.Padding(0);
-            this.catEnfermedad.Name = "catEnfermedad";
-            this.catEnfermedad.Size = new System.Drawing.Size(200, 56);
-            this.catEnfermedad.TabIndex = 4;
-            this.catEnfermedad.Text = "Enfermedad";
-            this.catEnfermedad.UseVisualStyleBackColor = false;
-            this.catEnfermedad.Click += new System.EventHandler(this.catEnfermedad_Click);
+            this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(60)))), ((int)(((byte)(117)))));
+            this.button3.Dock = System.Windows.Forms.DockStyle.Top;
+            this.button3.FlatAppearance.BorderSize = 0;
+            this.button3.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(174)))), ((int)(((byte)(96)))));
+            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(246)))), ((int)(((byte)(250)))));
+            this.button3.Location = new System.Drawing.Point(0, 280);
+            this.button3.Margin = new System.Windows.Forms.Padding(0);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(200, 56);
+            this.button3.TabIndex = 4;
+            this.button3.Text = "button3";
+            this.button3.UseVisualStyleBackColor = false;
             // 
-            // catMedicamento
+            // button9
             // 
-            this.catMedicamento.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(60)))), ((int)(((byte)(117)))));
-            this.catMedicamento.Dock = System.Windows.Forms.DockStyle.Top;
-            this.catMedicamento.FlatAppearance.BorderSize = 0;
-            this.catMedicamento.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(174)))), ((int)(((byte)(96)))));
-            this.catMedicamento.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.catMedicamento.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.catMedicamento.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(246)))), ((int)(((byte)(250)))));
-            this.catMedicamento.Location = new System.Drawing.Point(0, 224);
-            this.catMedicamento.Margin = new System.Windows.Forms.Padding(0);
-            this.catMedicamento.Name = "catMedicamento";
-            this.catMedicamento.Size = new System.Drawing.Size(200, 56);
-            this.catMedicamento.TabIndex = 10;
-            this.catMedicamento.Text = "Medicamento";
-            this.catMedicamento.UseVisualStyleBackColor = false;
-            this.catMedicamento.Click += new System.EventHandler(this.catMedicamento_Click);
+            this.button9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(60)))), ((int)(((byte)(117)))));
+            this.button9.Dock = System.Windows.Forms.DockStyle.Top;
+            this.button9.FlatAppearance.BorderSize = 0;
+            this.button9.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(174)))), ((int)(((byte)(96)))));
+            this.button9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button9.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(246)))), ((int)(((byte)(250)))));
+            this.button9.Location = new System.Drawing.Point(0, 224);
+            this.button9.Margin = new System.Windows.Forms.Padding(0);
+            this.button9.Name = "button9";
+            this.button9.Size = new System.Drawing.Size(200, 56);
+            this.button9.TabIndex = 10;
+            this.button9.Text = "button9";
+            this.button9.UseVisualStyleBackColor = false;
             // 
             // button5
             // 
@@ -199,22 +192,23 @@ namespace control_pacientes
             this.button8.Text = "button8";
             this.button8.UseVisualStyleBackColor = false;
             // 
-            // button6
+            // btnPaciente
             // 
-            this.button6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(60)))), ((int)(((byte)(117)))));
-            this.button6.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button6.FlatAppearance.BorderSize = 0;
-            this.button6.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(174)))), ((int)(((byte)(96)))));
-            this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button6.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(246)))), ((int)(((byte)(250)))));
-            this.button6.Location = new System.Drawing.Point(0, 56);
-            this.button6.Margin = new System.Windows.Forms.Padding(0);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(200, 56);
-            this.button6.TabIndex = 7;
-            this.button6.Text = "button6";
-            this.button6.UseVisualStyleBackColor = false;
+            this.btnPaciente.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(60)))), ((int)(((byte)(117)))));
+            this.btnPaciente.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnPaciente.FlatAppearance.BorderSize = 0;
+            this.btnPaciente.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(174)))), ((int)(((byte)(96)))));
+            this.btnPaciente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPaciente.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPaciente.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(246)))), ((int)(((byte)(250)))));
+            this.btnPaciente.Location = new System.Drawing.Point(0, 56);
+            this.btnPaciente.Margin = new System.Windows.Forms.Padding(0);
+            this.btnPaciente.Name = "btnPaciente";
+            this.btnPaciente.Size = new System.Drawing.Size(200, 56);
+            this.btnPaciente.TabIndex = 7;
+            this.btnPaciente.Text = "Paciente";
+            this.btnPaciente.UseVisualStyleBackColor = false;
+            this.btnPaciente.Click += new System.EventHandler(this.btnPaciente_Click);
             // 
             // btnInicio
             // 
@@ -274,7 +268,7 @@ namespace control_pacientes
             this.panel2.Location = new System.Drawing.Point(200, 0);
             this.panel2.Margin = new System.Windows.Forms.Padding(0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1162, 72);
+            this.panel2.Size = new System.Drawing.Size(1170, 72);
             this.panel2.TabIndex = 1;
             // 
             // lblPageTitle
@@ -283,12 +277,19 @@ namespace control_pacientes
             this.lblPageTitle.AutoSize = true;
             this.lblPageTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPageTitle.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.lblPageTitle.Location = new System.Drawing.Point(1024, 24);
+            this.lblPageTitle.Location = new System.Drawing.Point(1041, 24);
             this.lblPageTitle.Name = "lblPageTitle";
             this.lblPageTitle.Size = new System.Drawing.Size(62, 25);
             this.lblPageTitle.TabIndex = 0;
             this.lblPageTitle.Text = "Inicio";
             this.lblPageTitle.Click += new System.EventHandler(this.lblPageTitle_Click);
+            // 
+            // paciente1
+            // 
+            this.paciente1.Location = new System.Drawing.Point(200, 68);
+            this.paciente1.Name = "paciente1";
+            this.paciente1.Size = new System.Drawing.Size(1170, 586);
+            this.paciente1.TabIndex = 4;
             // 
             // homePanel
             // 
@@ -296,7 +297,7 @@ namespace control_pacientes
             | System.Windows.Forms.AnchorStyles.Right)));
             this.homePanel.Location = new System.Drawing.Point(200, 68);
             this.homePanel.Name = "homePanel";
-            this.homePanel.Size = new System.Drawing.Size(1162, 592);
+            this.homePanel.Size = new System.Drawing.Size(1170, 592);
             this.homePanel.TabIndex = 3;
             this.homePanel.Load += new System.EventHandler(this.homePanel_Load);
             // 
@@ -307,23 +308,20 @@ namespace control_pacientes
             this.usersPanel.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.usersPanel.Location = new System.Drawing.Point(222, 75);
             this.usersPanel.Name = "usersPanel";
-            this.usersPanel.Size = new System.Drawing.Size(1140, 580);
+            this.usersPanel.Size = new System.Drawing.Size(1148, 580);
             this.usersPanel.TabIndex = 2;
-            // 
-            // errorProvider1
-            // 
-            this.errorProvider1.ContainerControl = this;
             // 
             // Menu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(240)))), ((int)(((byte)(241)))));
-            this.ClientSize = new System.Drawing.Size(1362, 657);
+            this.ClientSize = new System.Drawing.Size(1370, 657);
             this.Controls.Add(this.homePanel);
             this.Controls.Add(this.usersPanel);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
+            this.Controls.Add(this.paciente1);
             this.Name = "Menu";
             this.Text = "Menu";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
@@ -332,7 +330,6 @@ namespace control_pacientes
             this.panel3.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -340,23 +337,24 @@ namespace control_pacientes
         #endregion
 
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button catEspecialidad;
+        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Button catMedicamento;
+        private System.Windows.Forms.Button button9;
         private System.Windows.Forms.Button button8;
         private System.Windows.Forms.Button btnInicio;
-        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Button btnPaciente;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Label lblNombre;
         private System.Windows.Forms.Panel pnlFotoUsuario;
         private System.Windows.Forms.Button btnUsuarios;
-        private System.Windows.Forms.Button catEnfermedad;
+        private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Label lblRole;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Label lblPageTitle;
         private UsersPanel usersPanel;
+
         private Home homePanel;
-        private System.Windows.Forms.ErrorProvider errorProvider1;
+        private UserControls.Paciente paciente1;
     }
 }

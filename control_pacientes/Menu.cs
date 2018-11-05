@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using System.Net;
 using System.IO;
 
+
 using control_pacientes.Clases;
 namespace control_pacientes
 {
@@ -67,46 +68,11 @@ namespace control_pacientes
 
         }
 
-        private void catEspecialidad_Click(object sender, EventArgs e)
+        private void btnPaciente_Click(object sender, EventArgs e)
         {
-            lblPageTitle.Text="Especialides";
-            Catalogos.CatEspecialidadPanel espe =new Catalogos.CatEspecialidadPanel();
-            this.Controls.Add(espe);
-            espe.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
-            |System.Windows.Forms.AnchorStyles.Right)));
-            espe.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            espe.Location = new System.Drawing.Point(222, 175);            
-            espe.Size = new System.Drawing.Size(1140, 580);
-            espe.TabIndex = 2;
-            espe.BringToFront();
-         }
-
-        private void catEnfermedad_Click(object sender, EventArgs e)
-        {
-            lblPageTitle.Text = "Enfermedades";
-            Catalogos.CatEnfermedadPanel enfe = new Catalogos.CatEnfermedadPanel();
-            this.Controls.Add(enfe);
-            enfe.Anchor=((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
-            | System.Windows.Forms.AnchorStyles.Right)));
-            enfe.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            enfe.Location = new System.Drawing.Point(222, 175);
-            enfe.Size = new System.Drawing.Size(1140, 580);
-            enfe.TabIndex = 2;
-            enfe.BringToFront();
-        }
-
-        private void catMedicamento_Click(object sender, EventArgs e)
-        {
-            lblPageTitle.Text = "Medicamentos";
-            Catalogos.CatMedicamentoPanel med = new Catalogos.CatMedicamentoPanel();
-            this.Controls.Add(med);
-            med.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
-            | System.Windows.Forms.AnchorStyles.Right)));
-            med.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            med.Location = new System.Drawing.Point(222, 175);
-            med.Size = new System.Drawing.Size(1140, 580);
-            med.TabIndex = 2;
-            med.BringToFront();
+            lblPageTitle.Text = "Paciente";
+            paciente1.BringToFront();
+            
         }
     }
 }
