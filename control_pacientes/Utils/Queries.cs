@@ -16,5 +16,6 @@ namespace control_pacientes.Utils
         public string GET_PACIENTES = "SELECT [pacienteID][ID Paciente],[nombre][Nombre],[foto],[fechaNacimiento][Fecha de Nacimiento],[domicilio][Domicilio],[telefono_1][Tel. 1],[telefono_2][Tel. 2],[dui][DUI],[nit][NIT],[pediatria] FROM [Pacientes]";
         public string ADD_PACIENTE = "INSERT INTO [Pacientes]([nombre],[fechaNacimiento],[domicilio],[telefono_1],[telefono_2],[dui],[nit],[pediatria])VALUES (@nombre,@fechaNacimiento,@domicilio,@tel1,@tel2,@dui,@nit,@pediatria)";
         public string DELETE_PACIENTE = "DELETE FROM [dbo].[Pacientes] WHERE pacienteID = @pacienteid";
+        public string UPDATE_PACIENTE = "UPDATE [Pacientes] SET [nombre] = @nombre,[fechaNacimiento] = @fechaNacimiento,[domicilio] = @domicilio,[telefono_1] = @tel1,[telefono_2] = @tel2,[dui] = @dui,[nit] = @nit,[pediatria] = @pediatria WHERE pacienteID = @pacienteid";
     }
 }
