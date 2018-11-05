@@ -132,8 +132,9 @@
             // 
             this.txtNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNombre.Location = new System.Drawing.Point(24, 76);
+            this.txtNombre.Multiline = true;
             this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(228, 22);
+            this.txtNombre.Size = new System.Drawing.Size(228, 85);
             this.txtNombre.TabIndex = 31;
             // 
             // label1

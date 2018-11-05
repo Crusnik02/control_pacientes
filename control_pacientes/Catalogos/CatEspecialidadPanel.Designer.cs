@@ -50,7 +50,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(79, 38);
+            this.label1.Location = new System.Drawing.Point(16, 45);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(69, 20);
             this.label1.TabIndex = 0;
@@ -60,9 +60,10 @@
             // txtEspecialidad
             // 
             this.txtEspecialidad.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtEspecialidad.Location = new System.Drawing.Point(83, 79);
+            this.txtEspecialidad.Location = new System.Drawing.Point(20, 86);
+            this.txtEspecialidad.Multiline = true;
             this.txtEspecialidad.Name = "txtEspecialidad";
-            this.txtEspecialidad.Size = new System.Drawing.Size(228, 22);
+            this.txtEspecialidad.Size = new System.Drawing.Size(228, 77);
             this.txtEspecialidad.TabIndex = 1;
             this.txtEspecialidad.TextChanged += new System.EventHandler(this.txtEspecialidad_TextChanged);
             // 
@@ -83,7 +84,7 @@
             this.panel1.Controls.Add(this.txtEspecialidad);
             this.panel1.Location = new System.Drawing.Point(24, 14);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(534, 211);
+            this.panel1.Size = new System.Drawing.Size(405, 211);
             this.panel1.TabIndex = 3;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
@@ -94,7 +95,7 @@
             this.flowLayoutPanel1.Controls.Add(this.btnEliminar);
             this.flowLayoutPanel1.Controls.Add(this.btnGuardar);
             this.flowLayoutPanel1.Controls.Add(this.btnCancelar);
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(427, 3);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(318, 3);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Size = new System.Drawing.Size(39, 194);
             this.flowLayoutPanel1.TabIndex = 23;
@@ -171,7 +172,7 @@
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.dgvEspecialidad);
             this.Name = "CatEspecialidadPanel";
-            this.Size = new System.Drawing.Size(582, 394);
+            this.Size = new System.Drawing.Size(449, 394);
             this.Load += new System.EventHandler(this.CatEspecialidadPanel_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvEspecialidad)).EndInit();
             this.panel1.ResumeLayout(false);
