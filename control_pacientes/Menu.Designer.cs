@@ -121,8 +121,9 @@
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(200, 56);
             this.button1.TabIndex = 2;
-            this.button1.Text = "button1";
+            this.button1.Text = "Especialidad";
             this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // button3
             // 
@@ -138,8 +139,9 @@
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(200, 56);
             this.button3.TabIndex = 4;
-            this.button3.Text = "button3";
+            this.button3.Text = "Medicamento";
             this.button3.UseVisualStyleBackColor = false;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // button9
             // 
@@ -155,8 +157,9 @@
             this.button9.Name = "button9";
             this.button9.Size = new System.Drawing.Size(200, 56);
             this.button9.TabIndex = 10;
-            this.button9.Text = "button9";
+            this.button9.Text = "Enfermedad";
             this.button9.UseVisualStyleBackColor = false;
+            this.button9.Click += new System.EventHandler(this.button9_Click);
             // 
             // button5
             // 
@@ -268,7 +271,7 @@
             this.panel2.Location = new System.Drawing.Point(200, 0);
             this.panel2.Margin = new System.Windows.Forms.Padding(0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1170, 72);
+            this.panel2.Size = new System.Drawing.Size(1162, 72);
             this.panel2.TabIndex = 1;
             // 
             // lblPageTitle
@@ -277,7 +280,7 @@
             this.lblPageTitle.AutoSize = true;
             this.lblPageTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPageTitle.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.lblPageTitle.Location = new System.Drawing.Point(1041, 24);
+            this.lblPageTitle.Location = new System.Drawing.Point(1033, 24);
             this.lblPageTitle.Name = "lblPageTitle";
             this.lblPageTitle.Size = new System.Drawing.Size(62, 25);
             this.lblPageTitle.TabIndex = 0;
@@ -297,7 +300,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.homePanel.Location = new System.Drawing.Point(200, 68);
             this.homePanel.Name = "homePanel";
-            this.homePanel.Size = new System.Drawing.Size(1170, 592);
+            this.homePanel.Size = new System.Drawing.Size(1162, 592);
             this.homePanel.TabIndex = 3;
             this.homePanel.Load += new System.EventHandler(this.homePanel_Load);
             // 
@@ -308,7 +311,7 @@
             this.usersPanel.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.usersPanel.Location = new System.Drawing.Point(222, 75);
             this.usersPanel.Name = "usersPanel";
-            this.usersPanel.Size = new System.Drawing.Size(1148, 580);
+            this.usersPanel.Size = new System.Drawing.Size(1140, 580);
             this.usersPanel.TabIndex = 2;
             // 
             // Menu
@@ -316,7 +319,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(240)))), ((int)(((byte)(241)))));
-            this.ClientSize = new System.Drawing.Size(1370, 657);
+            this.ClientSize = new System.Drawing.Size(1362, 657);
             this.Controls.Add(this.homePanel);
             this.Controls.Add(this.usersPanel);
             this.Controls.Add(this.panel2);
