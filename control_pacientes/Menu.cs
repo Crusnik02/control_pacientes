@@ -52,13 +52,14 @@ namespace control_pacientes
         private void btnUsuarios_Click(object sender, EventArgs e)
         {
             lblPageTitle.Text = "Usuarios";
+            usersPanel.Show();
             usersPanel.BringToFront();
             usersPanel.refreshGrid();
         }
 
         private void button7_Click(object sender, EventArgs e)
         {
-            lblPageTitle.Text = "Inicio";
+            lblPageTitle.Text = "Inicio";           
             homePanel.BringToFront();
             
         }
@@ -71,7 +72,8 @@ namespace control_pacientes
         private void btnPaciente_Click(object sender, EventArgs e)
         {
             lblPageTitle.Text = "Paciente";
-            paciente1.BringToFront();
+            paciente1.Show();
+            paciente1.BringToFront();            
             
         }
 
@@ -86,6 +88,8 @@ namespace control_pacientes
             espe.Location = new System.Drawing.Point(222, 175);
             espe.Size = new System.Drawing.Size(1140, 580);
             espe.TabIndex = 2;
+            usersPanel.Hide();
+            paciente1.Hide();
             espe.BringToFront();
 
         }
@@ -101,6 +105,8 @@ namespace control_pacientes
             med.Location = new System.Drawing.Point(222, 175);
             med.Size = new System.Drawing.Size(1140, 580);
             med.TabIndex = 2;
+            this.paciente1.Hide();
+            this.usersPanel.Hide();
             med.BringToFront();
         }
 
@@ -115,7 +121,25 @@ namespace control_pacientes
             enfe.Location = new System.Drawing.Point(222, 175);
             enfe.Size = new System.Drawing.Size(1140, 580);
             enfe.TabIndex = 2;
+            this.paciente1.Hide();
+            this.usersPanel.Hide();
             enfe.BringToFront();
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            lblPageTitle.Text = "Vacunas";
+            Catalogos.CatVacunasPanel v = new Catalogos.CatVacunasPanel();
+            this.Controls.Add(v);
+            v.Anchor= ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+            | System.Windows.Forms.AnchorStyles.Right)));
+            v.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            v.Location = new System.Drawing.Point(222, 175);
+            v.Size = new System.Drawing.Size(1140,580);
+            v.TabIndex = 2;
+            this.paciente1.Hide();
+            this.usersPanel.Hide();
+            v.BringToFront();
         }
     }
 }

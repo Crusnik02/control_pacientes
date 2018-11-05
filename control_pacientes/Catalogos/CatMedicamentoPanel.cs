@@ -40,7 +40,7 @@ namespace control_pacientes.Catalogos
                 {
                     int colw = 140;
                     dgvMedicamento.Columns[i].AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
-                    dgvMedicamento.Columns[i].Width = 140;
+                    dgvMedicamento.Columns[i].Width = colw;
                 }
             }
             catch (Exception e)

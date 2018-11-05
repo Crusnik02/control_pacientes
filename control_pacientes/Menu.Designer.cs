@@ -26,6 +26,7 @@
         /// Required method for Designer support - do not modify
         /// the contents of this method with the code editor.
         /// </summary>
+
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
@@ -175,8 +176,9 @@
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(200, 56);
             this.button5.TabIndex = 6;
-            this.button5.Text = "button5";
+            this.button5.Text = "Vacunas";
             this.button5.UseVisualStyleBackColor = false;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // button8
             // 
@@ -280,7 +282,7 @@
             this.lblPageTitle.AutoSize = true;
             this.lblPageTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPageTitle.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.lblPageTitle.Location = new System.Drawing.Point(1033, 24);
+            this.lblPageTitle.Location = new System.Drawing.Point(936, 26);
             this.lblPageTitle.Name = "lblPageTitle";
             this.lblPageTitle.Size = new System.Drawing.Size(62, 25);
             this.lblPageTitle.TabIndex = 0;
@@ -356,7 +358,6 @@
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Label lblPageTitle;
         private UsersPanel usersPanel;
-
         private Home homePanel;
         private UserControls.Paciente paciente1;
     }

@@ -102,6 +102,12 @@
     <Compile Include="Catalogos\CatMedicamentoPanel.Designer.cs">
       <DependentUpon>CatMedicamentoPanel.cs</DependentUpon>
     </Compile>
+    <Compile Include="Catalogos\CatVacunasPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Catalogos\CatVacunasPanel.Designer.cs">
+      <DependentUpon>CatVacunasPanel.cs</DependentUpon>
+    </Compile>
     <Compile Include="Clases\Conexion.cs" />
     <Compile Include="Clases\Rol.cs" />
     <Compile Include="Clases\Usuario.cs" />
@@ -150,6 +156,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Catalogos\CatMedicamentoPanel.resx">
       <DependentUpon>CatMedicamentoPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Catalogos\CatVacunasPanel.resx">
+      <DependentUpon>CatVacunasPanel.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Home.resx">
       <DependentUpon>Home.cs</DependentUpon>
