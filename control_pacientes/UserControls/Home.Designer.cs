@@ -1,4 +1,4 @@
-﻿namespace control_pacientes
+﻿namespace control_pacientes.UserControls
 {
     partial class Home
     {
@@ -28,16 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.SuspendLayout();
-            // 
-            // Home
-            // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            components = new System.ComponentModel.Container();
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Name = "Home";
-            this.Size = new System.Drawing.Size(1156, 597);
-            this.ResumeLayout(false);
-
         }
 
         #endregion

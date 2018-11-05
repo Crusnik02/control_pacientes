@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace control_pacientes
+namespace control_pacientes.UserControls
 {
     public partial class Home : UserControl
     {

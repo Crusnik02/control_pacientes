@@ -102,21 +102,9 @@
     <Compile Include="Catalogos\CatMedicamentoPanel.Designer.cs">
       <DependentUpon>CatMedicamentoPanel.cs</DependentUpon>
     </Compile>
-    <Compile Include="Catalogos\CatVacunasPanel.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Catalogos\CatVacunasPanel.Designer.cs">
-      <DependentUpon>CatVacunasPanel.cs</DependentUpon>
-    </Compile>
     <Compile Include="Clases\Conexion.cs" />
     <Compile Include="Clases\Rol.cs" />
     <Compile Include="Clases\Usuario.cs" />
-    <Compile Include="Home.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Home.Designer.cs">
-      <DependentUpon>Home.cs</DependentUpon>
-    </Compile>
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -131,16 +119,34 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UserControls\ConsultaPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\ConsultaPanel.Designer.cs">
+      <DependentUpon>ConsultaPanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\Home.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\Home.Designer.cs">
+      <DependentUpon>Home.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\HomePanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\HomePanel.Designer.cs">
+      <DependentUpon>HomePanel.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\Paciente.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="UserControls\Paciente.Designer.cs">
       <DependentUpon>Paciente.cs</DependentUpon>
     </Compile>
-    <Compile Include="UsersPanel.cs">
+    <Compile Include="UserControls\UsersPanel.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UsersPanel.Designer.cs">
+    <Compile Include="UserControls\UsersPanel.Designer.cs">
       <DependentUpon>UsersPanel.cs</DependentUpon>
     </Compile>
     <Compile Include="Utils\GlobalFunctions.cs" />
@@ -156,12 +162,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Catalogos\CatMedicamentoPanel.resx">
       <DependentUpon>CatMedicamentoPanel.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Catalogos\CatVacunasPanel.resx">
-      <DependentUpon>CatVacunasPanel.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Home.resx">
-      <DependentUpon>Home.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
@@ -179,10 +179,16 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="UserControls\ConsultaPanel.resx">
+      <DependentUpon>ConsultaPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\HomePanel.resx">
+      <DependentUpon>HomePanel.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UserControls\Paciente.resx">
       <DependentUpon>Paciente.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UsersPanel.resx">
+    <EmbeddedResource Include="UserControls\UsersPanel.resx">
       <DependentUpon>UsersPanel.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
@@ -232,6 +238,20 @@
   <ItemGroup>
     <None Include="Resources\rubbish-bin-delete-button.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\user.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\file %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\house.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\file %282%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\house %281%29.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
