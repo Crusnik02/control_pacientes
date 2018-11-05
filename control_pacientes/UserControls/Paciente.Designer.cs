@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Paciente));
             this.lblNombrePaciente = new System.Windows.Forms.Label();
             this.txtNombrePaciente = new System.Windows.Forms.TextBox();
             this.lblDuiPaciente = new System.Windows.Forms.Label();
@@ -58,6 +59,9 @@
             this.btnCancelar = new System.Windows.Forms.Button();
             this.chkPediatria = new System.Windows.Forms.CheckBox();
             this.epError = new System.Windows.Forms.ErrorProvider(this.components);
+            this.btnExpediente = new System.Windows.Forms.Button();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.lblExpediente = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPacientes)).BeginInit();
             this.flowLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.epError)).BeginInit();
@@ -355,10 +359,33 @@
             // 
             this.epError.ContainerControl = this;
             // 
+            // btnExpediente
+            // 
+            this.btnExpediente.FlatAppearance.BorderSize = 0;
+            this.btnExpediente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnExpediente.Image = ((System.Drawing.Image)(resources.GetObject("btnExpediente.Image")));
+            this.btnExpediente.Location = new System.Drawing.Point(1006, 11);
+            this.btnExpediente.Name = "btnExpediente";
+            this.btnExpediente.Size = new System.Drawing.Size(33, 33);
+            this.btnExpediente.TabIndex = 41;
+            this.btnExpediente.UseVisualStyleBackColor = true;
+            this.btnExpediente.Click += new System.EventHandler(this.btnExpediente_Click);
+            // 
+            // lblExpediente
+            // 
+            this.lblExpediente.AutoSize = true;
+            this.lblExpediente.Location = new System.Drawing.Point(994, 47);
+            this.lblExpediente.Name = "lblExpediente";
+            this.lblExpediente.Size = new System.Drawing.Size(60, 13);
+            this.lblExpediente.TabIndex = 42;
+            this.lblExpediente.Text = "Expediente";
+            // 
             // Paciente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.lblExpediente);
+            this.Controls.Add(this.btnExpediente);
             this.Controls.Add(this.chkPediatria);
             this.Controls.Add(this.flowLayoutPanel1);
             this.Controls.Add(this.dgvPacientes);
@@ -424,6 +451,9 @@
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.CheckBox chkPediatria;
         private System.Windows.Forms.ErrorProvider epError;
+        private System.Windows.Forms.Button btnExpediente;
+        private System.Windows.Forms.Label lblExpediente;
+        private System.Windows.Forms.ToolTip toolTip1;
 
     }
 }

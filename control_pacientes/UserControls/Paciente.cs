@@ -254,6 +254,11 @@ namespace control_pacientes.UserControls
             CleanValues();
             ControlBarra();
         }
+
+        private void btnExpediente_Click(object sender, EventArgs e)
+        {
+
+        }
         #endregion
 
         private void dgvPacientes_Click(object sender, EventArgs e)
@@ -279,6 +284,7 @@ namespace control_pacientes.UserControls
                 //cmbGenero.Text = dgvPacientes.Rows[dgvPacientes.CurrentRow.Index].Cells["GENERO"].Value.ToString();
             }
         }
+
         
        
     }

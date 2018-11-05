@@ -120,4 +120,18 @@
   <metadata name="epError.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="btnExpediente.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAD+SURBVFhH7ZbBCoJAEIZ9BB/BR+oRegTPnaSXiW6dOnTJe9ChSxBREGFBoBbhdZpZXcmYDbVc
+        L7PwCfu7O/OtXtYBgF5hQ5uwoU3yR8ORZVmAQEsSxC9KNRfAzd5bsV8IVMEWAksqcNuFsJ+PGhOtp1og
+        UQU/BfCFSxTTysB8QJufjxgOizHboA5Ug1BFtQAGPkL/p1xggk5Bhc6rCaTJvTZGAZxQ80oTE2m0LQvF
+        1xPbyMQ3AXVyfbKu4QRUwC3uAhEQAREQAREQARHQ/RC3bwFPCxwpuGxm7IZ/wl5KcTIsQptUr+UY0I1X
+        fYmOoetf3pwGCfQJG9qEDe0BzgvjrACdqMn+9AAAAABJRU5ErkJggg==
+</value>
+  </data>
+  <metadata name="toolTip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>109, 17</value>
+  </metadata>
 </root>
