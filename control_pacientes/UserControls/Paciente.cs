@@ -25,9 +25,22 @@ namespace control_pacientes.UserControls
         private void Paciente_Load(object sender, EventArgs e)
         {
             ControlBarra();
+            EnableObjects();
             fillGrid();
         }
         #region Custom Functions
+        private void EnableObjects(bool status = false)
+        {
+            txtDireccionPaciente.Enabled = status;
+            txtDuiPaciente.Enabled = status;
+            txtEdad.Enabled = status;
+            txtNitPaciente.Enabled = status;
+            txtNombrePaciente.Enabled = status;
+            txtTelefono1.Enabled = status;
+            txtTelefono2.Enabled = status;
+            chkPediatria.Enabled = status;
+            dtpFechaNacimiento.Enabled = status;
+        }
         private bool ValidarFormulario()
         {
             bool estado = true;
@@ -91,13 +104,13 @@ namespace control_pacientes.UserControls
             if (dgvPacientes.RowCount == 0)
             {
                 btnAgregar.Enabled = true; btnEditar.Enabled = false;
-                btnEliminar.Enabled = true; btnCancelar.Enabled = false;
+                btnEliminar.Enabled = false; btnCancelar.Enabled = false;
                 btnGuardar.Enabled = false;
             }
             else
             {
-                btnAgregar.Enabled = true; btnEditar.Enabled = true;
-                btnEliminar.Enabled = true; btnCancelar.Enabled = false;
+                btnAgregar.Enabled = true; btnEditar.Enabled = false;
+                btnEliminar.Enabled = false; btnCancelar.Enabled = false;
                 btnGuardar.Enabled = false;
             }
             if (Agregando == true || Editando == true)
@@ -113,7 +126,11 @@ namespace control_pacientes.UserControls
         #region Control Buttons
         private void btnCancelar_Click(object sender, EventArgs e)
         {
+            Editando = false;
+            Agregando = false;
             CleanValues();
+            EnableObjects();
+            ControlBarra();
         }
 
         private void btnGuardar_Click(object sender, EventArgs e)
@@ -129,8 +146,10 @@ namespace control_pacientes.UserControls
                 }
                 else if (Editando)
                 {
-                    //var passwordModified = !string.IsNullOrEmpty(txtPassword.Text);
-                    //cmd = new SqlCommand(passwordModified ? queries.EDIT_USER : queries.EDIT_USER_NO_PASSWORD);
+                    cmd = new SqlCommand(queries.UPDATE_PACIENTE);
+                    var pacienteid = new SqlParameter("@pacienteid",SqlDbType.Int);
+                    pacienteid.Value = Convert.ToInt32(txtPacienteID.Text);
+                    cmd.Parameters.Add(pacienteid);
                 }
 
                 var nombre = new SqlParameter("@nombre", SqlDbType.NVarChar, 50);
@@ -175,6 +194,9 @@ namespace control_pacientes.UserControls
                 //MessageBox.Show(cmd.Parameters.ToString());
                 if (utils.executeCommand(cmd))
                 {
+                    Editando = false;
+                    Agregando = false;
+                    EnableObjects();
                     CleanValues();
                     ControlBarra();
                     fillGrid();
@@ -218,6 +240,7 @@ namespace control_pacientes.UserControls
 
         private void btnEditar_Click(object sender, EventArgs e)
         {
+            EnableObjects(true);
             Agregando = false;
             Editando = true;
             ControlBarra();
@@ -227,6 +250,8 @@ namespace control_pacientes.UserControls
         {
             Agregando = true;
             Editando = false;
+            EnableObjects(true);
+            CleanValues();
             ControlBarra();
         }
         #endregion
@@ -235,10 +260,21 @@ namespace control_pacientes.UserControls
         {
             if (dgvPacientes.RowCount > 0)
             {
-                txtPacienteID.Text = dgvPacientes.Rows[dgvPacientes.CurrentRow.Index].
-                          Cells["ID PACIENTE"].Value.ToString();
-
+                Agregando = false;
+                Editando = false;
+                EnableObjects();
+                ControlBarra();
+                CleanValues();
+                txtPacienteID.Text = dgvPacientes.Rows[dgvPacientes.CurrentRow.Index].Cells["ID PACIENTE"].Value.ToString();
                 txtNombrePaciente.Text = dgvPacientes.Rows[dgvPacientes.CurrentRow.Index].Cells["NOMBRE"].Value.ToString();
+                dtpFechaNacimiento.Value = Convert.ToDateTime(dgvPacientes.Rows[dgvPacientes.CurrentRow.Index].Cells["Fecha de Nacimiento"].Value.ToString());
+                txtDireccionPaciente.Text = dgvPacientes.Rows[dgvPacientes.CurrentRow.Index].Cells["Domicilio"].Value.ToString();
+                txtDuiPaciente.Text = dgvPacientes.Rows[dgvPacientes.CurrentRow.Index].Cells["DUI"].Value.ToString();
+                txtNitPaciente.Text = dgvPacientes.Rows[dgvPacientes.CurrentRow.Index].Cells["NIT"].Value.ToString();
+                txtTelefono1.Text = dgvPacientes.Rows[dgvPacientes.CurrentRow.Index].Cells["Tel. 1"].Value.ToString();
+                txtTelefono2.Text = dgvPacientes.Rows[dgvPacientes.CurrentRow.Index].Cells["Tel. 2"].Value.ToString();
+                btnEliminar.Enabled = true;
+                btnEditar.Enabled = true;
                 //txtDireccionPaciente.Text = dgvPacientes.Rows[dgvPacientes.CurrentRow.Index].Cells["DIRECCION"].Value.ToString();
                 //cmbGenero.Text = dgvPacientes.Rows[dgvPacientes.CurrentRow.Index].Cells["GENERO"].Value.ToString();
             }
