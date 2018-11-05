@@ -84,6 +84,24 @@
     <Compile Include="Buttons.Designer.cs">
       <DependentUpon>Buttons.cs</DependentUpon>
     </Compile>
+    <Compile Include="Catalogos\CatEnfermedadPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Catalogos\CatEnfermedadPanel.Designer.cs">
+      <DependentUpon>CatEnfermedadPanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Catalogos\CatEspecialidadPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Catalogos\CatEspecialidadPanel.Designer.cs">
+      <DependentUpon>CatEspecialidadPanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Catalogos\CatMedicamentoPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Catalogos\CatMedicamentoPanel.Designer.cs">
+      <DependentUpon>CatMedicamentoPanel.cs</DependentUpon>
+    </Compile>
     <Compile Include="Clases\Conexion.cs" />
     <Compile Include="Clases\Rol.cs" />
     <Compile Include="Clases\Usuario.cs" />
@@ -117,6 +135,15 @@
     <Compile Include="Utils\Queries.cs" />
     <EmbeddedResource Include="Buttons.resx">
       <DependentUpon>Buttons.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Catalogos\CatEnfermedadPanel.resx">
+      <DependentUpon>CatEnfermedadPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Catalogos\CatEspecialidadPanel.resx">
+      <DependentUpon>CatEspecialidadPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Catalogos\CatMedicamentoPanel.resx">
+      <DependentUpon>CatMedicamentoPanel.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Home.resx">
       <DependentUpon>Home.cs</DependentUpon>
@@ -187,5 +214,6 @@
   <ItemGroup>
     <None Include="Resources\rubbish-bin-delete-button.png" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
